@@ -1,12 +1,26 @@
-name: cloud-provider-proxmox
-serviceType: managed
+global:
+  podSecurityStandards:
+    enforced: false
 
-project:
-  branch: "[[ .Branch ]]"
-  commit: "[[ .SHA ]]"
+kube-vip:
+  enabled: true
+  env:
+    vip_interface: "ens192"
+  image:
+    repository: gsoci.azurecr.io/giantswarm/kube-vip
+  nameOverride: kube-vip-svc-lb
+  tolerations:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/control-plane
+    operator: Exists
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+    operator: Exists
 
-image:
-  registry: quay.io
-  name: giantswarm/cloud-provider-proxmox-app
-  tag: v0.0.1
-  pullPolicy: IfNotPresent
+kube-vip-cloud-provider:
+  enabled: true
+  rangeGlobal: ""
+  cidrGlobal: ""
+  image:
+    repository: gsoci.azurecr.io/giantswarm/kube-vip-cloud-provider
+  nameOverride: kube-vip-cloud-provider
