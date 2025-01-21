@@ -1,0 +1,41 @@
+diff --git a/helm/kube-vip/values.yaml b/helm/kube-vip/values.yaml
+index d982438..b228249 100644
+--- a/helm/kube-vip/values.yaml
++++ b/helm/kube-vip/values.yaml
+@@ -2,7 +2,7 @@
+ # This is a YAML-formatted file.
+ # Declare variables to be passed into your templates.
+ image:
+-  repository: ghcr.io/kube-vip/kube-vip
++  repository: gsoci.azurecr.io/giantswarm/kube-vip
+   pullPolicy: IfNotPresent
+   # Overrides the image tag whose default is the chart appVersion.
+   # tag: "v0.7.0"
+@@ -12,7 +12,7 @@ config:
+ 
+ # Check https://kube-vip.io/docs/installation/flags/
+ env:
+-  vip_interface: ""
++  vip_interface: "ens192"
+   vip_arp: "true"
+   lb_enable: "true"
+   lb_port: "6443"
+@@ -53,7 +53,7 @@ extraLabels: {}
+   # Specify extra labels to be added to DaemonSet (and therefore to Pods)
+ 
+ imagePullSecrets: []
+-nameOverride: ""
++nameOverride: kube-vip-svc-lb
+ fullnameOverride: ""
+ 
+ serviceAccount:
+@@ -94,6 +94,9 @@ tolerations:
+   - effect: NoSchedule
+     key: node-role.kubernetes.io/control-plane
+     operator: Exists
++  - effect: NoSchedule
++    key: node-role.kubernetes.io/master
++    operator: Exists
+ affinity: {}
+   # nodeAffinity:
+   #   requiredDuringSchedulingIgnoredDuringExecution:

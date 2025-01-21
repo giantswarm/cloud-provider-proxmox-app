@@ -1,0 +1,19 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+directories:
+  - path: vendor
+    contents:
+      - path: proxmox-cloud-controller-manager
+        git:
+          depth: 1
+          url: https://github.com/sergelogvinov/proxmox-cloud-controller-manager
+          ref: "v0.7.0"
+        includePaths:
+          - charts/proxmox-cloud-controller-manager/**/*
+  - path: helm/cloud-provider-proxmox
+    contents:
+    - path: .
+      directory:
+        path: vendor/proxmox-cloud-controller-manager/charts/proxmox-cloud-controller-manager
+      ignorePaths:
+#      - Chart.yaml

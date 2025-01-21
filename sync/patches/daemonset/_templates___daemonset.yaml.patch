@@ -1,0 +1,13 @@
+diff --git a/helm/kube-vip/templates/daemonset.yaml b/helm/kube-vip/templates/daemonset.yaml
+index c60548a..cd5b148 100644
+--- a/helm/kube-vip/templates/daemonset.yaml
++++ b/helm/kube-vip/templates/daemonset.yaml
+@@ -1,6 +1,8 @@
+ apiVersion: apps/v1
+ kind: DaemonSet
+ metadata:
++  labels:
++    {{- include "kube-vip.labels" $ | nindent 4 }}
+   name: {{ include "kube-vip.name" . }}
+   namespace: {{ .Release.Namespace | default "kube-system" }}
+ spec:
