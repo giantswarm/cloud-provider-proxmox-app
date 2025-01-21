@@ -16,4 +16,4 @@ directories:
       directory:
         path: vendor/proxmox-cloud-controller-manager/charts/proxmox-cloud-controller-manager
       ignorePaths:
-#      - Chart.yaml
+      - values.schema.json
