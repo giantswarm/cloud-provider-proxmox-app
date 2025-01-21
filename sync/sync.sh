@@ -10,11 +10,10 @@ cd "${dir}/.."
 # Stage 1 sync - intermediate to the ./vendir folder
 set -x
 vendir sync
-helm dependency update helm/kube-vip/
+helm dependency update helm/cloud-provider-proxmox/
 { set +x; } 2>/dev/null
 
 # Patches
  ./sync/patches/values/patch.sh
-./sync/patches/chart/patch.sh
-./sync/patches/helpers/patch.sh
-./sync/patches/daemonset/patch.sh
+ ./sync/patches/chart/patch.sh
+ ./sync/patches/helpers/patch.sh
