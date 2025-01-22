@@ -9,6 +9,8 @@ Here we define the cloud-provider-proxmox chart with its templates and default c
 
 **What is this app?**
 
+https://github.com/sergelogvinov/proxmox-cloud-controller-manager is a Kubernetes cloud controller manager for Proxmox VE.
+
 **Why did we add it?**
 
 **Who can use it?**
