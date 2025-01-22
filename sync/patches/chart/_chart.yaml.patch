@@ -1,0 +1,11 @@
+diff --git a/helm/cloud-provider-proxmox/Chart.yaml b/helm/cloud-provider-proxmox/Chart.yaml
+index f225374..cf9dd5b 100644
+--- a/helm/cloud-provider-proxmox/Chart.yaml
++++ b/helm/cloud-provider-proxmox/Chart.yaml
+@@ -22,3 +22,6 @@ version: 0.2.11
+ # follow Semantic Versioning. They should reflect the version the application is using.
+ # It is recommended to use it with quotes.
+ appVersion: v0.7.0
++
++annotations:
++  application.giantswarm.io/team: "rocket"

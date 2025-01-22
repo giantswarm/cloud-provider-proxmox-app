@@ -1,0 +1,43 @@
+diff --git a/helm/cloud-provider-proxmox/values.yaml b/helm/cloud-provider-proxmox/values.yaml
+index af03799..6d1ef12 100644
+--- a/helm/cloud-provider-proxmox/values.yaml
++++ b/helm/cloud-provider-proxmox/values.yaml
+@@ -6,7 +6,7 @@ replicaCount: 1
+ 
+ image:
+   # -- Proxmox CCM image.
+-  repository: ghcr.io/sergelogvinov/proxmox-cloud-controller-manager
++  repository: gsoci.azurecr.io/giantswarm/proxmox-cloud-controller-manager
+   # -- Always or IfNotPresent
+   pullPolicy: IfNotPresent
+   # -- Overrides the image tag whose default is the chart appVersion.
+@@ -42,7 +42,7 @@ existingConfigSecretKey: config.yaml
+ config:
+   features:
+     # specify provider: proxmox if you are using capmox (cluster api provider for proxmox)
+-    provider: 'default'
++    provider: proxmox
+   clusters: []
+   #   - url: https://cluster-api-1.exmple.com:8006/api2/json
+   #     insecure: false
+@@ -114,6 +114,7 @@ securityContext:
+   capabilities:
+     drop:
+     - ALL
++  readOnlyRootFilesystem: true
+   seccompProfile:
+     type: RuntimeDefault
+ 
+@@ -124,9 +125,9 @@ resources:
+   # choice for the user. This also increases chances charts run on environments with little
+   # resources, such as Minikube. If you do want to specify resources, uncomment the following
+   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+-  # limits:
+-  #   cpu: 100m
+-  #   memory: 128Mi
++  limits:
++    cpu: 100m
++    memory: 128Mi
+   requests:
+     cpu: 10m
+     memory: 32Mi

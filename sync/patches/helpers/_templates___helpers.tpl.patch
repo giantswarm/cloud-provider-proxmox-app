@@ -1,0 +1,12 @@
+diff --git a/helm/cloud-provider-proxmox/templates/_helpers.tpl b/helm/cloud-provider-proxmox/templates/_helpers.tpl
+index ee96292..a2f5ee5 100644
+--- a/helm/cloud-provider-proxmox/templates/_helpers.tpl
++++ b/helm/cloud-provider-proxmox/templates/_helpers.tpl
+@@ -40,6 +40,7 @@ helm.sh/chart: {{ include "proxmox-cloud-controller-manager.chart" . }}
+ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+ {{- end }}
+ app.kubernetes.io/managed-by: {{ .Release.Service }}
++application.giantswarm.io/team: {{ index .Chart.Annotations "application.giantswarm.io/team" | quote }}
+ {{- end }}
+ 
+ {{/*

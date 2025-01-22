@@ -1,22 +1,27 @@
 apiVersion: v2
-appVersion: 0.0.1
-
-# Please make sure your name DOES NOT end in "app" or "-app".
-name: cloud-provider-proxmox
-
-# Please describe what the app provides in a sentence or two.
-description: Please add description
-
-home: https://github.com/giantswarm/cloud-provider-proxmox-app
-
-# If you have an icon/logo, you should add it to https://github.com/giantswarm/web-assets
-# and set the final URL as a value here and uncomment.
-#icon: https://s.giantswarm.io/app-icons/example/1/light.svg
-
+name: proxmox-cloud-controller-manager
+description: Cloud Controller Manager plugin for Proxmox
+type: application
+home: https://github.com/sergelogvinov/proxmox-cloud-controller-manager
+icon: https://raw.githubusercontent.com/sergelogvinov/proxmox-cloud-controller-manager/main/charts/proxmox-cloud-controller-manager/icon.png
 sources:
-- https://github.com/some-org/some-repo
-version: 0.0.0-dev # [[ .Version ]] if you're using architect instead of app-build-suite
+  - https://github.com/sergelogvinov/proxmox-cloud-controller-manager
+keywords:
+  - ccm
+  - proxmox
+  - kubernetes
+maintainers:
+  - name: sergelogvinov
+    url: https://github.com/sergelogvinov
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 0.2.11
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application. Versions are not expected to
+# follow Semantic Versioning. They should reflect the version the application is using.
+# It is recommended to use it with quotes.
+appVersion: v0.7.0
+
 annotations:
-  application.giantswarm.io/team: TEAM-NAME # used through .Chart.Annotations.team (not replaced automatically)
-  branch: my-branch # Used through .Chart.Annotations.branch (This is not replaced automatically)
-  commit: f00bar # Used through .Chart.Annotations.commit (This is not replaced automatically)
+  application.giantswarm.io/team: "rocket"
