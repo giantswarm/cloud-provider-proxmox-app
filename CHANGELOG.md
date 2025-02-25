@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Allow existingConfigSecret to accept string or null values.
+
 ## [0.2.0] - 2025-02-25
 
 ### Changed
