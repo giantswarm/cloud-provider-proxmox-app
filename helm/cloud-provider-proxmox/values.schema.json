@@ -28,7 +28,7 @@
             }
         },
         "existingConfigSecret": {
-            "type": "null"
+            "type": ["null", "string"]
         },
         "existingConfigSecretKey": {
             "type": "string"
