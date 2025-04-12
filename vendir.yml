@@ -7,7 +7,7 @@ directories:
         git:
           depth: 1
           url: https://github.com/sergelogvinov/proxmox-cloud-controller-manager
-          ref: "v0.7.0"
+          ref: "v0.8.0"
         includePaths:
           - charts/proxmox-cloud-controller-manager/**/*
   - path: helm/cloud-provider-proxmox
