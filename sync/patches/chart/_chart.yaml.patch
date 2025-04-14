@@ -27,4 +27,4 @@ index 475be2d..eda48ee 100644
  # It is recommended to use it with quotes.
  appVersion: v0.8.0
 +annotations:
-+   application.giantswarm.io/team: "rocket"
++  application.giantswarm.io/team: "rocket"
