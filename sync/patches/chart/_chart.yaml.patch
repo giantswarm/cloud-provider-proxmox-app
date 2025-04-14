@@ -1,11 +1,30 @@
 diff --git a/helm/cloud-provider-proxmox/Chart.yaml b/helm/cloud-provider-proxmox/Chart.yaml
-index f225374..cf9dd5b 100644
+index 475be2d..eda48ee 100644
 --- a/helm/cloud-provider-proxmox/Chart.yaml
 +++ b/helm/cloud-provider-proxmox/Chart.yaml
-@@ -22,3 +22,6 @@ version: 0.2.11
+@@ -2,7 +2,7 @@ apiVersion: v2
+ name: proxmox-cloud-controller-manager
+ description: Cloud Controller Manager plugin for Proxmox
+ type: application
+-home: https://github.com/sergelogvinov/proxmox-cloud-controller-manager
++home: https://github.com/giantswarm/cloud-provider-proxmox-app
+ icon: https://raw.githubusercontent.com/sergelogvinov/proxmox-cloud-controller-manager/main/charts/proxmox-cloud-controller-manager/icon.png
+ sources:
+   - https://github.com/sergelogvinov/proxmox-cloud-controller-manager
+@@ -11,8 +11,8 @@ keywords:
+   - proxmox
+   - kubernetes
+ maintainers:
+-  - name: sergelogvinov
+-    url: https://github.com/sergelogvinov
++  - name: Team Rocket
++    email: team-rocket@giantswarm.io
+ # This is the chart version. This version number should be incremented each time you make changes
+ # to the chart and its templates, including the app version.
+ # Versions are expected to follow Semantic Versioning (https://semver.org/)
+@@ -22,3 +22,5 @@ version: 0.2.13
  # follow Semantic Versioning. They should reflect the version the application is using.
  # It is recommended to use it with quotes.
- appVersion: v0.7.0
-+
+ appVersion: v0.8.0
 +annotations:
-+  application.giantswarm.io/team: "rocket"
++   application.giantswarm.io/team: "rocket"
