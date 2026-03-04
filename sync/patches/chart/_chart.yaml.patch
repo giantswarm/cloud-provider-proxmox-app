@@ -22,9 +22,9 @@ index 475be2d..eda48ee 100644
  # This is the chart version. This version number should be incremented each time you make changes
  # to the chart and its templates, including the app version.
  # Versions are expected to follow Semantic Versioning (https://semver.org/)
-@@ -22,3 +22,5 @@ version: 0.2.13
+@@ -22,3 +22,5 @@ version: 0.2.25
  # follow Semantic Versioning. They should reflect the version the application is using.
  # It is recommended to use it with quotes.
- appVersion: v0.8.0
+ appVersion: v0.12.3
 +annotations:
 +  application.giantswarm.io/team: "rocket"

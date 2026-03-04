@@ -1,6 +1,6 @@
 # proxmox-cloud-controller-manager
 
-![Version: 0.2.13](https://img.shields.io/badge/Version-0.2.13-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.8.0](https://img.shields.io/badge/AppVersion-v0.8.0-informational?style=flat-square)
+![Version: 0.2.23](https://img.shields.io/badge/Version-0.2.23-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.12.3](https://img.shields.io/badge/AppVersion-v0.12.3-informational?style=flat-square)
 
 Cloud Controller Manager plugin for Proxmox
 
@@ -30,7 +30,7 @@ You need to set `--cloud-provider=external` in the kubelet argument for all node
 
 ```shell
 # Create role CCM
-pveum role add CCM -privs "VM.Audit"
+pveum role add CCM -privs "VM.Audit Sys.Audit"
 # Create user and grant permissions
 pveum user add kubernetes@pve
 pveum aclmod / -user kubernetes@pve -role CCM
@@ -68,6 +68,56 @@ tolerations:
     effect: NoSchedule
 ```
 
+## Example for credentials from separate Secrets
+```yaml
+# helm-values.yaml
+config:
+  clusters:
+    - url: https://cluster-api-1.exmple.com:8006/api2/json
+      insecure: false
+      token_id_file: /run/secrets/cluster-1/token_id
+      token_secret_file: /run/secrets/cluster-1/token_secret
+      region: cluster-1
+    - url: https://cluster-api-2.exmple.com:8006/api2/json
+      insecure: false
+      token_id_file: /run/secrets/cluster-2/token_id
+      token_secret_file: /run/secrets/cluster-2/token_secret
+      region: cluster-2
+extraVolumes:
+  - name: credentials-cluster-1
+    secret:
+      secretName: proxmox-credentials-cluster-1
+  - name: credentials-cluster-2
+    secret:
+      secretName: proxmox-credentials-cluster-2
+extraVolumeMounts:
+  - name: credentials-cluster-1
+    readOnly: true
+    mountPath: "/run/secrets/cluster-1"
+  - name: credentials-cluster-2
+    readOnly: true
+    mountPath: "/run/secrets/cluster-2"
+
+```
+```yaml
+# secrets-proxmox-clusters.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: proxmox-credentials-cluster-1
+stringData:
+  token_id: kubernetes@pve!csi
+  token_secret: key1
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: proxmox-credentials-cluster-2
+stringData:
+  token_id: kubernetes@pve!csi
+  token_secret: key2
+```
+
 Deploy chart:
 
 ```shell
@@ -92,7 +142,7 @@ helm upgrade -i --namespace=kube-system -f proxmox-ccm.yaml \
 | logVerbosityLevel | int | `2` | Log verbosity level. See https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/logging.md for description of individual verbosity levels. |
 | existingConfigSecret | string | `nil` | Proxmox cluster config stored in secrets. |
 | existingConfigSecretKey | string | `"config.yaml"` | Proxmox cluster config stored in secrets key. |
-| config | object | `{"clusters":[],"features":{"provider":"default"}}` | Proxmox cluster config. |
+| config | object | `{"clusters":[],"features":{"provider":"default"}}` | Proxmox cluster config. refs: https://github.com/sergelogvinov/proxmox-cloud-controller-manager/blob/main/docs/config.md |
 | serviceAccount | object | `{"annotations":{},"create":true,"name":""}` | Pods Service Account. ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/ |
 | priorityClassName | string | `"system-cluster-critical"` | CCM pods' priorityClassName. |
 | initContainers | list | `[]` | Add additional init containers to the CCM pods. ref: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/ |
