@@ -17,3 +17,4 @@ helm dependency update helm/cloud-provider-proxmox/
  ./sync/patches/values/patch.sh
  ./sync/patches/chart/patch.sh
  ./sync/patches/helpers/patch.sh
+ ./sync/patches/networkpolicy/patch.sh
