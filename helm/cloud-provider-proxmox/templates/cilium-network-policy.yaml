@@ -9,9 +9,11 @@ spec:
   egress:
   - toEntities:
     - kube-apiserver
+  - toEntities:
+    - world
   endpointSelector:
     matchLabels:
-      {{- include "proxmox-cloud-controller-manager.selectorLabels" . | nindent 6 }}
+      {{ include "proxmox-cloud-controller-manager.selectorLabels" . | nindent 6 }}
   ingress:
   - fromEntities:
     - cluster

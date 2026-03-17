@@ -2,13 +2,15 @@ apiVersion: cilium.io/v2
 kind: CiliumNetworkPolicy
 metadata:
   labels:
-    {{- include "proxmox-cloud-controller-manager.labels" . | nindent 4 }} 
+    {{- include "proxmox-cloud-controller-manager.labels" . | nindent 4 }}
   name: proxmox-cloud-controller-manager
   namespace: {{ .Release.Namespace }}
 spec:
   egress:
   - toEntities:
     - kube-apiserver
+  - toEntities:
+    - world
   endpointSelector:
     matchLabels:
       {{ include "proxmox-cloud-controller-manager.selectorLabels" . | nindent 6 }}
