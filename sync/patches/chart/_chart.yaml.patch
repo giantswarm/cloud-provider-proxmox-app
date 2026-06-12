@@ -2,15 +2,17 @@ diff --git a/helm/cloud-provider-proxmox/Chart.yaml b/helm/cloud-provider-proxmo
 index 475be2d..eda48ee 100644
 --- a/helm/cloud-provider-proxmox/Chart.yaml
 +++ b/helm/cloud-provider-proxmox/Chart.yaml
-@@ -2,7 +2,7 @@ apiVersion: v2
+@@ -2,8 +2,8 @@ apiVersion: v2
  name: proxmox-cloud-controller-manager
  description: Cloud Controller Manager plugin for Proxmox
  type: application
 -home: https://github.com/sergelogvinov/proxmox-cloud-controller-manager
+-icon: https://raw.githubusercontent.com/sergelogvinov/proxmox-cloud-controller-manager/main/charts/proxmox-cloud-controller-manager/icon.png
 +home: https://github.com/giantswarm/cloud-provider-proxmox-app
- icon: https://raw.githubusercontent.com/sergelogvinov/proxmox-cloud-controller-manager/main/charts/proxmox-cloud-controller-manager/icon.png
++icon: https://s.giantswarm.io/app-icons/proxmox/1/dark.png
  sources:
    - https://github.com/sergelogvinov/proxmox-cloud-controller-manager
+ keywords:
 @@ -11,8 +11,8 @@ keywords:
    - proxmox
    - kubernetes
