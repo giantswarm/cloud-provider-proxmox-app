@@ -9,7 +9,7 @@ index 475be2d..eda48ee 100644
 -home: https://github.com/sergelogvinov/proxmox-cloud-controller-manager
 -icon: https://raw.githubusercontent.com/sergelogvinov/proxmox-cloud-controller-manager/main/charts/proxmox-cloud-controller-manager/icon.png
 +home: https://github.com/giantswarm/cloud-provider-proxmox-app
-+icon: https://s.giantswarm.io/app-icons/proxmox/1/dark.png
++icon: https://s.giantswarm.io/app-icons/proxmox/2/light.svg
  sources:
    - https://github.com/sergelogvinov/proxmox-cloud-controller-manager
  keywords:
