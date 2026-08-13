@@ -1,8 +1,8 @@
 apiVersion: v2
 # upstream version
-appVersion: 0.13.0
+appVersion: APP_VERSION_PLACEHOLDER
 # giantswarm chart version
-version: 0.4.2
+version: VERSION_PLACEHOLDER
 name: proxmox-cloud-controller-manager
 description: Cloud Controller Manager plugin for Proxmox
 type: application
@@ -17,7 +17,7 @@ annotations:
   io.giantswarm.application.team: "rocket"
   io.giantswarm.application.managed: "true"
   io.giantswarm.application.upstream-chart-url: "https://github.com/sergelogvinov/proxmox-cloud-controller-manager/tree/main/charts/proxmox-cloud-controller-manager"
-  io.giantswarm.application.upstream-chart-version: "0.13.0"
+  io.giantswarm.application.upstream-chart-version: "APP_VERSION_PLACEHOLDER"
 maintainers:
   - name: Team Rocket
     email: team-rocket@giantswarm.io
