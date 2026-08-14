@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   # -- Proxmox CCM image.
-  repository: gsoci.azurecr.io/giantswarm/proxmox-cloud-controller-manager
+  repository: ghcr.io/sergelogvinov/proxmox-cloud-controller-manager
   # -- Always or IfNotPresent
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
@@ -16,13 +16,13 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-# -- Any extra environments for talos-cloud-controller-manager
+# -- Any extra environments for proxmox-cloud-controller-manager
 extraEnvs:
   []
   # - name: KUBERNETES_SERVICE_HOST
   #   value: 127.0.0.1
 
-# -- Any extra arguments for talos-cloud-controller-manager
+# -- Any extra arguments for proxmox-cloud-controller-manager
 extraArgs:
   []
   # - --cluster-name=kubernetes
@@ -50,7 +50,7 @@ existingConfigSecretKey: config.yaml
 config:
   features:
     # Provider value can be "default" or "capmox"
-    provider: proxmox
+    provider: "default"
   clusters: []
   #   - url: https://cluster-api-1.exmple.com:8006/api2/json
   #     insecure: false
@@ -124,7 +124,6 @@ securityContext:
   capabilities:
     drop:
       - ALL
-  readOnlyRootFilesystem: true
   seccompProfile:
     type: RuntimeDefault
 
@@ -135,9 +134,9 @@ resources:
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  limits:
-    cpu: 100m
-    memory: 128Mi
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
   requests:
     cpu: 10m
     memory: 32Mi
@@ -146,6 +145,11 @@ resources:
 # CCM will use hostNetwork.
 # It allows to use CCM without CNI plugins.
 useDaemonSet: false
+
+# -- Specifies the DNS policy for the controller
+# Default is ClusterFirstWithHostNet for DaemonSet mode, and ClusterFirst for Deployment mode.
+# ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
+dnsPolicy: ""
 
 # -- Deployment update strategy type.
 # ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#updating-a-deployment
