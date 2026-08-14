@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update upstream whereabouts chart to v0.15.0.
+
 ### Fixed
 
 - fix: rework Chart.yaml handling to ensure version numbers are updated correctly
