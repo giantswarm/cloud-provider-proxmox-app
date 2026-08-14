@@ -16,13 +16,13 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-# -- Any extra environments for talos-cloud-controller-manager
+# -- Any extra environments for proxmox-cloud-controller-manager
 extraEnvs:
   []
   # - name: KUBERNETES_SERVICE_HOST
   #   value: 127.0.0.1
 
-# -- Any extra arguments for talos-cloud-controller-manager
+# -- Any extra arguments for proxmox-cloud-controller-manager
 extraArgs:
   []
   # - --cluster-name=kubernetes
@@ -146,6 +146,11 @@ resources:
 # CCM will use hostNetwork.
 # It allows to use CCM without CNI plugins.
 useDaemonSet: false
+
+# -- Specifies the DNS policy for the controller
+# Default is ClusterFirstWithHostNet for DaemonSet mode, and ClusterFirst for Deployment mode.
+# ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
+dnsPolicy: ""
 
 # -- Deployment update strategy type.
 # ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#updating-a-deployment
