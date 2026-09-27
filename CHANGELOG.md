@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update upstream whereabouts chart to v0.15.0.
+- Update upstream whereabouts chart to v0.16.0.
 
 ### Fixed
 
