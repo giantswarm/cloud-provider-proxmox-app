@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update upstream whereabouts chart to v0.15.0.
 - Disable Helm image reference verification in CI config.
+- Revert 'Disable Helm image reference verification in CI config'.
+- Stop overriding appVersion in chart metadata.
 
 ### Fixed
 

@@ -12,7 +12,8 @@ workflows:
         app_catalog: default-catalog
         app_catalog_test: default-test-catalog
         chart: 'cloud-provider-proxmox'
-          # Trigger job on git tag.
+        override_app_version: false
+         # Trigger job on git tag.
         filters:
           tags:
             only: /^v.*/
