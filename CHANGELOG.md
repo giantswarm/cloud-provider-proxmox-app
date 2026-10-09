@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update architect to v10.13.1 (giantswarm/cloud-provider-proxmox-app#90)
 - Update architect to v10.13.2 (giantswarm/cloud-provider-proxmox-app#98)
 - Update architect to v10.13.5 (giantswarm/cloud-provider-proxmox-app#100)
+- Revert 'Disable Helm image reference verification in CI config'.
+- Stop overriding appVersion in chart metadata.
 
 ### Fixed
 
