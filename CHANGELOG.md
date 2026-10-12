@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update upstream whereabouts chart to v0.15.0.
 - Disable Helm image reference verification in CI config.
 - Update architect to v10.13.1 (giantswarm/cloud-provider-proxmox-app#90)
+- Update architect to v10.13.2 (giantswarm/cloud-provider-proxmox-app#98)
 
 ### Fixed
 
