@@ -9,13 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update upstream whereabouts chart to v0.16.0.
+- Update upstream sergelogvinov/proxmox-cloud-controller-manager chart to v0.16.0.
 
 ### Fixed
 
 - The `helm.sh/chart` label is valid for long chart versions: the 63-character cut trims the whole trailing run of `-`, `.` and `_`.
 - Use upstream version string as image tag.
-
 - Update upstream sergelogvinov/proxmox-cloud-controller-manager chart to v0.15.0.
 - Disable Helm image reference verification in CI config.
 - Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
