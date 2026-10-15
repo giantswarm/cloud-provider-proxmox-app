@@ -7,31 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update upstream sergelogvinov/proxmox-cloud-controller-manager chart to v0.16.0.
+
+- Update architect to v10.13.1 (giantswarm/cloud-provider-proxmox-app#90)
+- Update architect to v10.13.2 (giantswarm/cloud-provider-proxmox-app#98)
+- Update architect to v10.13.5 (giantswarm/cloud-provider-proxmox-app#100)
+
 ### Fixed
 
 - The `helm.sh/chart` label is valid for long chart versions: the 63-character cut trims the whole trailing run of `-`, `.` and `_`.
 - Use upstream version string as image tag.
-
-### Changed
-
-- Update upstream sergelogvinov/proxmox-cloud-controller-manager chart to v0.15.0.
+- fix: rework Chart.yaml handling to ensure version numbers are updated correctly
 - Disable Helm image reference verification in CI config.
-- Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
-- Update architect to v10.13.1 (giantswarm/cloud-provider-proxmox-app#90)
-- Update architect to v10.13.2 (giantswarm/cloud-provider-proxmox-app#98)
-- Update architect to v10.13.5 (giantswarm/cloud-provider-proxmox-app#100)
 - Revert 'Disable Helm image reference verification in CI config'.
 - Stop overriding appVersion in chart metadata.
-
-### Fixed
-
-- fix: rework Chart.yaml handling to ensure version numbers are updated correctly
 
 ### Added
 
 - Run the sync script automatically on Renovate vendir branches and push the result for review.
 - Add a check which fails a pull request if the sync script was not run.
 - Add shared helpers file to sync dir.
+- Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
 
 ## [0.4.2] - 2026-06-15
 
