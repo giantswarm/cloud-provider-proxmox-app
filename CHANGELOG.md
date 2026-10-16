@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Run the sync script automatically on Renovate vendir branches and push the result for review.
+- Add a check which fails a pull request if the sync script was not run.
+- Add shared helpers file to sync dir.
+- Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
+
 ### Changed
 
 - Update upstream sergelogvinov/proxmox-cloud-controller-manager chart to v0.16.0.
@@ -14,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update architect to v10.13.1 (giantswarm/cloud-provider-proxmox-app#90)
 - Update architect to v10.13.2 (giantswarm/cloud-provider-proxmox-app#98)
 - Update architect to v10.13.5 (giantswarm/cloud-provider-proxmox-app#100)
+- Use Linux tools to manipulate chart label instead of an inscrutable Perl command.
 
 ### Fixed
 
@@ -23,13 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Disable Helm image reference verification in CI config.
 - Revert 'Disable Helm image reference verification in CI config'.
 - Stop overriding appVersion in chart metadata.
-
-### Added
-
-- Run the sync script automatically on Renovate vendir branches and push the result for review.
-- Add a check which fails a pull request if the sync script was not run.
-- Add shared helpers file to sync dir.
-- Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
+- Fix the sync/sync.sh script issues caused by #87.
 
 ## [0.4.2] - 2026-06-15
 
