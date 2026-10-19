@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update architect to v10.13.2 (giantswarm/cloud-provider-proxmox-app#98)
 - Update architect to v10.13.5 (giantswarm/cloud-provider-proxmox-app#100)
 - Use Linux tools to manipulate chart label instead of an inscrutable Perl command.
+- Update architect to v10.14.7 (giantswarm/cloud-provider-proxmox-app#104)
 
 ### Fixed
 
