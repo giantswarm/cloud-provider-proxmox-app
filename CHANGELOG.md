@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Use the `giantswarm-release` GitHub App instead of the taylorbot personal access token to push sync commits.
 - Update upstream sergelogvinov/proxmox-cloud-controller-manager chart to v0.16.1.
+- Update architect to v10.14.10 (giantswarm/cloud-provider-proxmox-app#114)
 
 ### Added
 
