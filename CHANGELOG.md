@@ -7,22 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-
-- Update upstream sergelogvinov/proxmox-cloud-controller-manager chart to v0.16.1.
-
 ### Added
 
 - Run the sync script automatically on Renovate vendir branches and push the result for review.
 - Add a check which fails a pull request if the sync script was not run.
 - Add shared helpers file to sync dir.
 - Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
-
 - Update architect to v10.13.1 (giantswarm/cloud-provider-proxmox-app#90)
 - Update architect to v10.13.2 (giantswarm/cloud-provider-proxmox-app#98)
 - Update architect to v10.13.5 (giantswarm/cloud-provider-proxmox-app#100)
 - Use Linux tools to manipulate chart label instead of an inscrutable Perl command.
 - Update architect to v10.14.7 (giantswarm/cloud-provider-proxmox-app#104)
+
+### Changed
+
+- Update upstream sergelogvinov/proxmox-cloud-controller-manager chart to v0.16.0.
+- Update upstream sergelogvinov/proxmox-cloud-controller-manager chart to v0.16.1.
 
 ### Fixed
 
