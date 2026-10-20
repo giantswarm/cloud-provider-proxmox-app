@@ -1,5 +1,4 @@
 replace-chart-version-with-git: true
 generate-metadata: true
-disable-helm-image-reference-validator: true
 chart-dir: ./helm/cloud-provider-proxmox
 destination: ./build

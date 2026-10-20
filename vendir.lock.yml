@@ -2,10 +2,10 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'chore: release v0.15.0...'
-      sha: de218a0daac68226263e95c224fbf46c5ffeec25
+      commitTitle: 'chore: release v0.16.1...'
+      sha: fd03c86eb3eb3e4090a26bdfca4a24493fa18701
       tags:
-      - v0.15.0
+      - v0.16.1
     path: proxmox-cloud-controller-manager
   path: vendor
 - contents:
