@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update architect to v10.15.1 (giantswarm/cloud-provider-proxmox-app#120)
 - Update architect to v10.16.3 (giantswarm/cloud-provider-proxmox-app#121)
 - Update architect to v10.16.6 (giantswarm/cloud-provider-proxmox-app#125)
+- Update architect to v10.16.7 (giantswarm/cloud-provider-proxmox-app#126)
 
 ### Added
 
