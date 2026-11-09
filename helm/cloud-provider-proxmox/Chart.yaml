@@ -2,7 +2,7 @@ apiVersion: v2
 # upstream version
 appVersion: 0.16.1
 # giantswarm chart version
-version: 0.4.2
+version: 0.5.0
 name: proxmox-cloud-controller-manager
 description: Cloud Controller Manager plugin for Proxmox
 type: application

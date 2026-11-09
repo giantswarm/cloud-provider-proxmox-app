@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-11-09
+
 ### Changed
 
 - Create the vendir update issue as the `giantswarm-project-automation` GitHub App instead of architectbot's `ISSUE_AUTOMATION` token, and take the board item when the board's auto-add adds it first (giantswarm/giantswarm#38800).
@@ -87,7 +89,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release tracking upstream version `0.7.0`.
 
-[Unreleased]: https://github.com/giantswarm/cloud-provider-proxmox-app/compare/v0.4.2...HEAD
+[Unreleased]: https://github.com/giantswarm/cloud-provider-proxmox-app/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/giantswarm/cloud-provider-proxmox-app/compare/v0.4.2...v0.5.0
 [0.4.2]: https://github.com/giantswarm/cloud-provider-proxmox-app/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/giantswarm/cloud-provider-proxmox-app/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/giantswarm/cloud-provider-proxmox-app/compare/v0.3.0...v0.4.0
