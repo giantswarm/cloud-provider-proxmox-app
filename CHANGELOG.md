@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update carvel-dev/vendir to v0.47.0 (giantswarm/cloud-provider-proxmox-app#142)
+
 ## [0.5.0] - 2026-11-09
 
 ### Changed
