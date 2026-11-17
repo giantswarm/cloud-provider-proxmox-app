@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update architect to v10.17.5 (giantswarm/cloud-provider-proxmox-app#141)
+
 ## [0.5.0] - 2026-11-09
 
 ### Changed
